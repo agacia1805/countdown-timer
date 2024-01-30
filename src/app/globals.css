@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .ocean-background {
-  background: linear-gradient(180deg, #000214 0%, #001c3d 100%);
+  background: linear-gradient(180deg, #000214 0%, #01122a 100%);
   position: relative;
   overflow: hidden;
 }
