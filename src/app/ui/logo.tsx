@@ -10,7 +10,7 @@ export default function Logo() {
       whileHover={{ rotate: 180 }}
       transition={{ duration: 0.6 }}
     >
-      <LiaHourglassEndSolid size={50} />
+      <LiaHourglassEndSolid size={50} className='text-yellow-400' />
     </motion.div>
   );
 }
