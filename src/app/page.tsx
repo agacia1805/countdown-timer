@@ -81,7 +81,11 @@ export default function Home() {
     setTimeRemaining({ hours: 0, minutes: 0, seconds: 0 });
   };
 
-  const handleTimeInputChange = (value: string, type: 'hours' | 'minutes' | 'seconds', maxInput: number) => {
+  const handleTimeInputChange = (
+    value: string,
+    type: 'hours' | 'minutes' | 'seconds',
+    maxInput: number
+  ) => {
     const numValue = parseInt(value, 10) || 0;
 
     if (numValue > maxInput) {
@@ -96,7 +100,7 @@ export default function Home() {
 
   return (
     <div className='flex flex-col items-center justify-center gap-16'>
-      <div className='flex flex-col gap-8 md:flex-row'>
+      <div className='flex flex-col gap-12 lg:flex-row'>
         <Input
           name='hours'
           handleOnChange={(e) =>
@@ -119,24 +123,26 @@ export default function Home() {
           remainingTime={timeRemaining.seconds}
         />
       </div>
-      <Button
-        name='Start button'
-        onClick={() =>
-          startTimer(
-            timeRemaining.hours,
-            timeRemaining.minutes,
-            timeRemaining.seconds
-          )
-        }
-      >
-        Start
-      </Button>
-      <Button name='Pause resume button' onClick={pauseResumeTimer}>
-        {paused ? 'Resume' : 'Pause'}
-      </Button>
-      <Button name='Pause resume button' onClick={resetTimer}>
-        Reset
-      </Button>
+      <div className='flex flex-col gap-8 lg:flex-row'>
+        <Button
+          name='Start button'
+          onClick={() =>
+            startTimer(
+              timeRemaining.hours,
+              timeRemaining.minutes,
+              timeRemaining.seconds
+            )
+          }
+        >
+          Start
+        </Button>
+        <Button name='Pause resume button' onClick={pauseResumeTimer}>
+          {paused ? 'Resume' : 'Pause'}
+        </Button>
+        <Button name='Pause resume button' onClick={resetTimer}>
+          Reset
+        </Button>
+      </div>
     </div>
   );
 }

@@ -13,7 +13,7 @@ export default function Button({ name, onClick, children }: ButtonProps) {
       type='button'
       name={name}
       onClick={onClick}
-      className='rounded border px-8 py-2'
+      className='rounded-lg border px-8 py-2'
     >
       {children}
     </button>

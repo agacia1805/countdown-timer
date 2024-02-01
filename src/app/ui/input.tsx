@@ -17,7 +17,7 @@ export default function Input({
       name={name}
       value={formattedTime}
       onChange={handleOnChange}
-      className='timeInput appearance-none border-none bg-transparent text-right font-semibold leading-tight text-yellow-300 focus:outline-none'
+      className='timeInput appearance-none border-none bg-transparent text-center font-semibold leading-tight text-yellow-300 focus:outline-none'
     />
   );
 }
