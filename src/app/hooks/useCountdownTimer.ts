@@ -122,6 +122,7 @@ const useCountdownTimer = (initialState: TimeRemaining) => {
     startTimer,
     pauseResumeTimer,
     resetTimer,
+    targetTime,
     paused,
     handleTimeInputChange,
   };
