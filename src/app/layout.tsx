@@ -20,10 +20,10 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${inter.className} background flex min-h-screen flex-col text-white`}
+        className={`${inter.className} flex min-h-screen flex-col text-white`}
       >
         <Header />
-        <div className='flex flex-grow flex-col justify-center px-8'>
+        <div className='flex flex-grow flex-col justify-center px-8 py-16'>
           {children}
         </div>
         <Footer />
