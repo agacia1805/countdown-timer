@@ -14,7 +14,25 @@ export default function Home() {
     paused,
     targetTime,
     handleTimeInputChange,
+    runCounter,
+    setRunCounter,
   } = useCountdownTimer({ hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    if (
+      runCounter &&
+      timeRemaining.hours === 0 &&
+      timeRemaining.minutes === 0 &&
+      timeRemaining.seconds === 0
+    ) {
+      const alarmSound = '/alarm1.wav';
+      const audio = new Audio(alarmSound);
+      audio
+        .play()
+        .catch((error) => console.error('Failed to play the sound:', error));
+      setRunCounter(false);
+    }
+  }, [timeRemaining]);
 
   return (
     <div className='flex flex-col items-center justify-center gap-24'>

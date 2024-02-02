@@ -7,11 +7,7 @@ type ButtonProps = {
   name: string;
 };
 
-export default function Button({
-  name,
-  onClick,
-  children,
-}: ButtonProps) {
+export default function Button({ name, onClick, children }: ButtonProps) {
   return (
     <button
       type='button'

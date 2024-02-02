@@ -9,6 +9,7 @@ type TimeRemaining = {
 const useCountdownTimer = (initialState: TimeRemaining) => {
   const [targetTime, setTargetTime] = useState<Date | null>(null);
   const [paused, setPaused] = useState<boolean>(false);
+  const [runCounter, setRunCounter] = useState<boolean>(false);
   const [timeRemaining, setTimeRemaining] = useState<TimeRemaining>({
     hours: 0,
     minutes: 0,
@@ -33,6 +34,7 @@ const useCountdownTimer = (initialState: TimeRemaining) => {
 
   const startTimer = (hours: number, minutes: number, seconds: number) => {
     setPaused(false);
+    setRunCounter(true);
 
     let additionalHours = Math.floor(minutes / 60);
     hours += additionalHours;
@@ -124,6 +126,8 @@ const useCountdownTimer = (initialState: TimeRemaining) => {
     resetTimer,
     targetTime,
     paused,
+    runCounter,
+    setRunCounter,
     handleTimeInputChange,
   };
 };
